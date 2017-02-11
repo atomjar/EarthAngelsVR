@@ -1,0 +1,318 @@
+
+<html>
+  <head>
+    <title>Earth Angels</title>
+    <script src="index.js"></script>
+    <!-- <script src="color-on-beat.js"></script> -->
+    <script src="https://unpkg.com/aframe-text-component@^0.4.1/dist/aframe-text-component.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="floor" src="/assets/grass2.jpg"></img>
+        <img id="sky" src="/assets/cloud.jpg"></img>
+        <img id="curved" src="/assets/sacred.png"></img>
+        <!-- <img id="male" src="/assets/angelBlack.png"></img> -->
+        <img id="wings" src="/assets/feathers.png"></img>
+        <img id="columns" src="/assets/greek.png"></img>
+        <img id="angel" src="/assets/ea.png"></img>
+        <img id="sphere" src="/assets/globe.png"></img>
+        <img id="heart" src="/assets/heart.png"></img>
+        <!-- <img id="floor" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossOrigin="anonymous"></img> -->
+        <audio id="song" src="kick.wav"></audio>
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+        <a-mixin id="boldFont" text="font: #optimerBoldFont"></a-mixin>
+      </a-assets>
+
+      <a-entity
+        text="text: Earth Angels"
+        mixin="boldFont"
+        material="color: gold"
+        position="-2 4 -6"
+      ></a-entity>
+
+      <!-- <a-curvedimage src="#male"
+                     position="-5 6 -5"
+                     height="8"
+                     radius="6"
+                     theta-length="130"
+                     rotation="0 90 0"
+                     scale="1.5 4 2">
+      </a-curvedimage> -->
+
+      <a-curvedimage src="#wings"
+                     position="-4 8 -7"
+                     height="7"
+                     radius="6"
+                     theta-length="140"
+                     rotation="0 90 0"
+                     scale="1 1.5 2">
+      </a-curvedimage>
+
+
+      <a-curvedimage src="#columns"
+                     position="-10 6 -2"
+                     height="8"
+                     radius="6"
+                     theta-length="130"
+                     rotation="0 200 0"
+                     scale="1.5 4 2">
+      </a-curvedimage>
+
+      <a-curvedimage src="#columns"
+                     position="10 6 -2"
+                     height="8"
+                     radius="6"
+                     theta-length="130"
+                     rotation="0 20 0"
+                     scale="1.5 4 2">
+      </a-curvedimage>
+
+
+      <a-curvedimage src="#curved"
+                     position="-2.3 12 22"
+                     height="8"
+                     radius="7"
+                     theta-length="95"
+                     rotation="0 130 0"
+                     scale="1.5 4 2">
+      </a-curvedimage>
+
+
+      <a-sphere
+        position="0 8 -10"
+        rotation="0 0 0"
+        src="#sphere"
+        material="color: white; metalness: .3">
+        <a-animation
+             begin="mouseenter"
+             dur="3000"
+             direction="alternate"
+             attribute="scale"
+             from="1 1 1"
+             to="2 2 2"
+             repeat="indefinite">
+        </a-animation>
+        <a-animation
+            begin="2000"
+            attribute="rotation"
+            direction="alternate"
+            dur="10000"
+            to="10 360 90"
+            repeat="indefinite">
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="position"
+          dur="20000"
+          from="0 8 -10"
+          to="0 16 9">
+        </a-animation>
+      </a-sphere>
+
+
+      <a-box position="0 1 4" color="white" src="#angel">
+        <a-animation
+          begin="mouseenter"
+          attribute="position"
+          dur="3000"
+          from="0 1 4"
+          to="0 5 4">
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="rotation"
+          dur="3000"
+          from="0 0 0"
+          to="0 45 0"
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="scale"
+          dur="3000"
+          from="1 1 1"
+          to="3 3 3">
+        </a-animation>
+      </a-box>
+
+      <a-box position="-5 1 3" color="white" src="#heart">
+        <a-animation
+          begin="mouseenter"
+          attribute="position"
+          dur="3000"
+          from="-5 1 3"
+          to="-5 5 3">
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="rotation"
+          dur="3000"
+          from="0 0 0"
+          to="0 45 0"
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="scale"
+          dur="3000"
+          from="1 1 1"
+          to="3 3 3">
+        </a-animation>
+      </a-box>
+
+      <a-box position="5 1 3" color="white" src="#heart">
+        <a-animation
+          begin="mouseenter"
+          attribute="position"
+          dur="3000"
+          from="5 1 3"
+          to="5 5 3">
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="rotation"
+          dur="3000"
+          from="0 0 0"
+          to="0 45 0"
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="scale"
+          dur="3000"
+          from="1 1 1"
+          to="3 3 3">
+        </a-animation>
+      </a-box>
+
+
+      <a-entity id="sky"
+        geometry="primitive: sphere; radius: 30; phiLength: 360; phiStart: 0; thetaLength: 90"
+        material="shader: flat; side: back; height: 2048; src: #sky; width: 2048"
+      ></a-entity>
+
+      <a-entity id="ground"
+        geometry="primitive: circle; radius: 30.5"
+        rotation="-90 0 0"
+        material="src: #floor"
+      ></a-entity>
+
+      <a-camera position="0 0 0">
+        <a-cursor color="white">
+      </a-camera>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Earth Angels VR</title>
+    <script src="index.js"></script>
+    <script src="color-on-beat.js"></script>
+
+  </head>
+  <body>
+      <a-scene>
+      <assets>
+        <img id="sphereTexture" src="cloud.jpg">
+        <img id="pearl" src="pearl.jpg">
+        <img id="water" src="water.jpg">
+        <img id="metal" src="metal.jpg">
+        <img id="silk" src="silk.jpg">
+        <audio id="exhale" src="exhale.mp3" autoplay>
+      </assets>
+
+
+      <!-- <a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity> -->
+      <!-- <a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity> -->
+      <!-- <a-entity id="analyser"
+        audioanalyser="#exhale"
+      </a-entity>
+
+      <a-entity id="box"
+        geometry="primitive: box" material="color: #C03546"
+        color-on-beat="analyserEl: #analyser"
+        position="0 0.5 -4">
+      </a-entity>
+
+      <a-sphere position=".2 5 -7" rotation="0 45 0" material="color: white; metalness: .3">
+        <a-animation
+             begin="mouseenter"
+             dur="4000"
+             direction="alternate"
+             attribute="scale"
+             from="1 1 1"
+             to="1.5 1.5 1.5"
+             repeat="indefinite">
+        </a-animation>
+
+        <a-animation
+            begin="mouseenter"
+            attribute="rotation"
+            direction="alternate"
+            dur="12000"
+            to="10 360 90"
+            repeat="indefinite">
+        </a-animation>
+
+      </a-sphere>
+
+
+      <a-box position="0 1 4" color="white" src="ea.png">
+        <a-animation
+          begin="mouseenter"
+          attribute="position"
+          dur="3000"
+          from="0 1 4"
+          to="0 4 4">
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="rotation"
+          dur="3000"
+          from="0 0 0"
+          to="0 45 0"
+        </a-animation>
+        <a-animation
+          begin="mouseenter"
+          attribute="scale"
+          dur="3000"
+          from="1 1 1"
+          to="3 3 3">
+        </a-animation>
+      </a-box>
+
+      <a-light type="point" color="white" color="white" position="0 0 .5">
+      </a-light>
+
+
+      <a-camera position="0 1.8 0">
+        <a-cursor color="white">
+      </a-camera>
+
+      <a-sky src="cloud.jpg"></a-sky>
+    </a-scene>
+  </body>
+</html> -->
+ -->
+
+
+
+<!-- <body>
+  <a-scene>
+    <a-assets> -->
+      <!-- <audio id="song" src="rickroll.mp3" autoplay loop></audio> -->
+    <!-- </a-assets>
+
+    <a-entity
+      audio-analyser="#song"
+      component-that-does-stuff-with-audio-analyser-data
+    ></a-entity>
+  </a-scene>
+
+  <a-sky src="cloud.jpg"></a-sky>
+</body> -->
